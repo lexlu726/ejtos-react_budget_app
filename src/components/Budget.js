@@ -7,11 +7,11 @@ const Budget = () => {
 
     const {hm, setHm} = useState(0)
 
-    const changeB =() =>{
+    const changeB =(val) =>{
 
         dispatch({
             type:"SET_BUDGET",
-            payload:hm
+            payload:val
         })
     }
     return (
@@ -21,7 +21,7 @@ const Budget = () => {
                 <input
                 type="number"
                 value ={budget}
-                onChange = {changeB}
+                onChange = {event=> changeB(event.target.value)}
                 ></input>
             
             </span>
